@@ -1,0 +1,119 @@
+//1-Aşağıdakilerden hangisi js de bir değişken tanımlanırken kullanılmaz.
+
+/* a) var b) let c) const --d)-- string */
+
+/* soru 2
+    var age;
+    console.log(age);
+    age= 26;
+
+    a)26  b)age=26 --c)--undefined d) age
+
+*/
+
+/* soru 3
+
+    Aşağıdakilerden hangisi doğru bir değişken tanımlamasıdır.
+    a) var 1numara;
+    b) var ad soyad;
+    c) var seçim;
+    --d)-- var dogum_tarihi;
+    
+*/
+/* 
+    soru 4 
+    Aşağıdakilerden hangisi yanlış değer atama işlemidir.
+    a)var firstName='Ahmet';
+    b) let lastName="Yılmaz";
+    c) const yearOfBirth= 1985;
+    --d)-- int age=29;
+*/
+
+/* 
+    Soru 5
+    var age=20;
+    console.log(typeof age);
+
+    --a)-- Number b) string c) age is Number d) object
+*/
+
+/* 
+    soru 6
+    Aşağıdakilerden hangisi primitiv değişken grubuna girmez.
+    a) number b) string --c)--object d) boolean
+*/
+
+/* 
+    soru 7
+    var age 20;
+    var money=10.5;
+    var isActive=true;
+    var name;
+    let names=['ali','ayşe','efe'];
+
+    console.log(typeof age);
+    console.log(typeof money);
+    console.log(typeof isActive);
+    console.log(typeof name);
+    console.log(typeof names);
+
+    a) number - number - boolean - undefined - object
+    --b)-- number - double - boolean - undefined - object
+    c) number - number - string - undefined - object
+    d) number - number - boolean - undefined - array
+
+*/
+
+/*  soru 8
+    let num1='100';
+    let num2= 50;
+    consol.log(num1+num2);
+    Çıktısı nasıl olur.
+
+    a)150 b)10050 c)num1num2 --d)-- undefined
+    
+*/
+/* soru 9
+
+    consol.log(Number('a'));
+    consol.log(Number(10));
+    consol.log(Number(false));
+    consol.log(String(10));
+    consol.log(Boolean('true'));
+
+    a) a - 10 - 0 - 10 - true
+    --b)-- NaN - 10 - 0 - 10 - true
+    c) NaN - 10 - true - 10 - true
+    d) NaN - 10 - 0 - 10 - 'true'   
+
+*/
+
+/* soru 10
+    consol.log(parseInt('10'));
+    consol.log(parseInt('10.2'));
+    consol.log(parseFloat('10'));
+    çıktıları nasıl olur?
+
+    a) 10 - 10.2 - 10.2
+    --b)-- 10 - 10 - 10
+    c) 10 - 10 - 10.2
+    d) 10.0 - 10 - 10.2
+*/ 
+
+/*  soru 11
+    var x=10;
+    var y=5;
+    consol.log(x++);
+    consol.log(++x);
+    consol.log(--x);
+    consol.log(x%y);
+    consol.log(x!=y);
+    consol.log(x===y || x>y);
+
+    ekran çıktısı nasıldır.
+    
+    --a)-- 10 - 12 - 11 - 1 - true - true
+    b) 11 - 11 - 11 - 1 - true - true
+    c) 11 - 12 - 11 - 1 - true - true
+    d) 10 - 10 - 11 - 1 - true - true
+*/

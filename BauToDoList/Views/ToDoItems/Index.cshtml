@@ -1,0 +1,272 @@
+﻿@model IEnumerable<BauToDoList.Models.ToDoItem>
+
+@{
+    ViewBag.Title = "Yapılacak İşler Listesi";
+}
+
+<h2>Yapılacaklar</h2>
+
+<p>
+    @Html.ActionLink("Yeni Kayıt", "Create", null, new { @class = "btn btn-primary" })
+    <a class="dt-button buttons-excel buttons-html5 btn yellow btn-outline" tabindex="0" aria-controls="sample-1" href="@Url.Action("ExportToExcel","ToDoItems")" style="float:right;"><span>Excel Aktarımı</span></a>
+    <a class="dt-button buttons-excel buttons-html5 btn purple btn-outline" tabindex="0" aria-controls="sample-1" href="@Url.Action("ExportToCsv","ToDoItems")" style="float:right; margin-right:5px;"><span>Csv Aktarımı</span></a>
+</p>
+<table id="tblRecords" class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th class="text-nowrap all">
+                @Html.DisplayNameFor(model => model.Category.Name)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.Customer.Name)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.Department.Name)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.Manager.FirstName)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.Organizator.FirstName)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.Side.Name)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.Attachment)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.MeetingDate)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.MeetingHour)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.PlannedDate)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.PlannedHour)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.FinishDate)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.FinishHour)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.ReviseDate)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.ReviseHour)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.ConversationSubject)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.SupporterCompany)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.SupporterDoctor)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.ConversationAttendeeCount)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.ScheduledOrganizationDate)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.ScheduledOrganizationHour)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.MailingSubjects)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.PosterSubject)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.PosterCount)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.Elearning)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.TypesOfScans)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.AsoCountInScans)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.TypesOfOrganization)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.AsoCountInOrganization)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.TypesOfVaccinationOrganization)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.AsoCountInVaccinationOrganization)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.AmountOfCompensantionForPoster)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.CorporateProductivityReport)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.CreateDate)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.UpdatedBy)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.UpdateDate)
+            </th>
+            <th data-orderable="false" class="all">Eylemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manager.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Organizator.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Side.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Attachment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeetingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeetingHour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlannedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlannedHour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinishDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinishHour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviseHour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConversationSubject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupporterCompany)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupporterDoctor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConversationAttendeeCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScheduledOrganizationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScheduledOrganizationHour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailingSubjects)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PosterSubject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PosterCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Elearning)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypesOfScans)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AsoCountInScans)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypesOfOrganization)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AsoCountInOrganization)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypesOfVaccinationOrganization)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AsoCountInVaccinationOrganization)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountOfCompensantionForPoster)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CorporateProductivityReport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateDate)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-xs d-inline-block" })
+                @Html.ActionLink("Ayrıntılar", "Details", new { id = item.Id }, new { @class = "btn btn-success btn-xs d-inline-block" })
+                @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs d-inline-block" })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
